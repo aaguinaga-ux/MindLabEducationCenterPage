@@ -1,6 +1,6 @@
-import { fetchCursos } from "./fetchDatosCursos.js";
-import { procesarCursos } from "../utils/transformarDatos.js";
-import { renderTablaCursosResumen } from "../utils/renderTablaResumen.js";
+import { fetchCursos } from "/MindLabEducationCenterPage/fetchDatosCursos.js";
+import { procesarCursos } from "/MindLabEducationCenterPage/utils/transformarDatos.js";
+import { renderTablaCursosResumen } from "/MindLabEducationCenterPage/utils/renderTablaResumen.js";
 
 export let cursosProcesadosGlobal = [];
 
