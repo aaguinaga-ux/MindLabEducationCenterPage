@@ -1,5 +1,5 @@
 import { fetchCursos } from "/MindLabEducationCenterPage/services/fetchDatosCursos.js";
-import { renderTablaCursosResumen } from "/MindLabEducationCenterPage/renderTablaResumen.js";
+import { renderTablaCursosResumen } from "/MindLabEducationCenterPage/utils/renderTablaResumen.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
