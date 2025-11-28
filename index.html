@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MindLab Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="mb-4 text-center border-2 border-gray-200 p-2 shadow">
+                <div class="bg-white p-4 shadow flex justify-between items-end">
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-gray-700 text-lg">MindLab Education Center</h1>
+                        <span class="text-gray-700">Gestión y seguimiento de grupos académicos</span>
+                    </div>
+                    
+                    
+
+                    <div class="relative mt-4">
+                        <div class="flex items-center gap-2 justify-center relative">
+                            <div id="btnFiltros" class="flex items-center gap-2 bg-[#2c7988ff] rounded-md px-4 py-1 cursor-pointer">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                                <span class="text-white">Filtros</span>
+                            </div>
+
+                            <span id="contadorFiltros" class="absolute -top-4 right-0 bg-red-500 rounded-full text-white text-xs px-2 py-1 flex items-center justify-center hidden">0</span>
+                        </div>
+
+                        <div id="panelFiltros" class="absolute top-full right-0 mt-2 z-50 border border-gray-200 bg-white p-2 rounded hidden space-y-2">
+                            <select id="filtroGrupo" class="border rounded px-2 py-1 w-full text-sm">
+                                <option value="">Todos los cursos</option>
+                            </select>
+                            
+                            <select id="filtroEstatus" class="border rounded px-2 py-1 w-[300px] text-sm">
+                                <option value="">Todos los estados</option>
+                            </select>
+                            <select id="filtroOrden" class="border rounded px-2 py-1 w-full text-sm">
+                                <option value="">Ordenar por valoración</option>
+                                <option value="desc">Descendente</option>
+                            </select>
+
+                            <div class="flex items-center justify-center gap-4">
+                                <div class="btn cursor-pointer flex gap-2 items-center  justify-center bg-gray-100 p-2 rounded-md border-gray-200 border  hover:border-gray-300 group" id="resetFiltros"  title="borrar filtros"> 
+                                    <span class=" text-gray-600 text-xs group-hover:text-red-500 transition">Borrar filtros</span>
+                                </div>
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="border border-gray-200 p-2 shadow">
+                <div class="bg-white p-2 flex flex-col items-center justify-center">
+                    <table  class="divide-y divide-gray-200 w-full  p-2 mb-4">
+                        <thead class="bg-gray-50">
+                            <tr class="divide-x divide-gray-200">
+                                <th class="px-2  py-3 text-center text-xs font-medium text-gray-500 uppercase ">
+                                IdGrupo
+                                </th>
+                                <th class="px-2 py-3 text-center text-xs font-medium text-gray-500 uppercase w-[200px]">
+                                Curso
+                                </th>
+                                <th class="px-2  py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                                Valoración
+                                </th>
+                                <th class="px-2  py-3 text-center text-xs font-medium text-gray-500 uppercase ">
+                                Estatus
+                                </th>
+                                <th class=" py-3 text-center text-xs font-medium text-gray-500 uppercase  w-[150px]">
+                                Graduados
+                                </th>
+                                <th class=" py-3 text-center text-xs font-medium text-gray-500 uppercase  w-[150px]">
+                                Abandonos
+                                </th>
+                                <th class=" py-3 text-center text-xs font-medium text-gray-500 uppercase  w-[150px]">
+                                Asistencias
+                                </th>
+                                <th class=" py-3 text-center text-xs font-medium text-gray-500 uppercase  w-[150px]">
+                                Faltas
+                                </th>
+                                <th class=" py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                                    ...
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla" class="divide-y divide-gray-200 bg-white">
+
+                        </tbody>
+                        
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+        
+
+         
+    </div>
+
+    <script>
+        function toggleAnalisis() {
+            const submenu = document.getElementById('submenu');
+            const chevron = document.getElementById('chevron');
+            
+            submenu.classList.toggle('hidden');
+            chevron.classList.toggle('rotate-180');
+        }
+    </script>
+    <script type="module" src="services/coursesOverview.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnFiltros = document.getElementById('btnFiltros');
+            const panelFiltros = document.getElementById('panelFiltros');
+
+            btnFiltros.addEventListener('click', () => {
+                panelFiltros.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <script>
+        function verInforme(idGrupo) {
+            window.location.href = `componentes/curso.html?id=${idGrupo}`;
+        }
+    </script>
+    <script type="module" src="/utils/filtrarCursos.js"></script>
+
+</body>
+</html>
+
+

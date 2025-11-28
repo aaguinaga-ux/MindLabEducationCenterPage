@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe del Curso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="mb-6 bg-gray-100 border p-2 shadow">
+                <div class="flex justify-between items-center bg-white p-4 shadow">
+                    <h1 id="titulo" class="text-3xl font-bold text-gray-900"></h1>
+                </div>
+            </div>
+            <div class="flex flex-col items-center mt-4">
+                <a href="../index.html"
+                class="w-40 p-2 cursor-pointer flex items-center justify-center border border-gray-200 bg-[#59899cff] text-white rounded-md shadow-sm transition-all active:translate-y-[2px]">
+                    ← <span class="ml-2 text-sm">Volver a la lista</span>
+                </a>
+
+                <div class='grid grid-cols-3 gap-4 mt-4 w-full'>
+                    <div class='col-span-3'>
+
+                        <div class='grid grid-cols-3 gap-3 mb-4'>
+                            <div class='border p-2 bg-gray-100 shadow'>
+                                <div class='flex flex-col p-2 bg-white h-full gap-2 justify-center items-center shadow'>
+
+                                    <div class="flex gap-2 items-baseline">
+                                        <span class="text-sm text-gray-700">Valoración del curso:</span>
+                                        <div id="valoracionTag"
+                                            class="text-sm text-center flex items-center justify-center text-white px-2 py-1 rounded bg-gray-400">
+                                            Sin datos
+                                        </div>
+                                    </div>
+
+                                    <ul id="infoCurso"
+                                        class="flex flex-col gap-1 p-2 border-4 border-double bg-[#B4B1A8]/10 rounded-md text-gray-600 text-sm w-[220px]">
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                            
+                            <div class='border p-2 col-span-2 bg-gray-100 shadow'>
+                                <div class='h-full bg-white p-4 shadow'>
+
+                                    <div class="flex items-center justify-center gap-8 mb-4 mt-4">
+                                        <div class="text-center">
+                                            <span id="interesados" class='text-lg font-bold text-gray-500'></span>
+                                            <div class="text-gray-500 text-lg">Interesados</div>
+                                        </div>
+
+                                        <div class="text-gray-400 text-3xl">→</div>
+
+                                        <div class="text-center">
+                                            <span id="iniciados" class='text-lg font-bold text-gray-500'></span>
+                                            <div class="text-gray-500 text-lg">Iniciados</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4 pt-4 border-t border-gray-200">
+                                        <div class="flex justify-center gap-2 items-center bg-gray-100 border border-white rounded-lg p-4 font-medium text-gray-600">
+                                            <span>El</span>
+                                            <span id="conversion" class='text-xl font-bold text-gray-500'></span>
+                                            <span>% de los usuarios interesados en el curso lo inician</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class='grid grid-cols-4 gap-4'>
+
+                            <div class='border p-2 bg-gray-100 shadow'>
+                                <div class='flex flex-col items-center justify-center p-2 bg-white h-full shadow'>
+                                    <p id="graduados" class='text-5xl text-[#78AF97] mt-6'>
+                                        <strong></strong>
+                                    </p>
+                                    <h1 class=' text-lg text-gray-500 mb-4 '>Finalizados</h1>
+                                </div>
+                            </div>
+
+                            <div class='border p-2 bg-gray-100 shadow'>
+                                <div class='flex flex-col items-center justify-center p-2 bg-white shadow h-full'>
+                                    <p id="finalizacion" class='text-5xl text-[#78AF97] mt-6 '>
+                                        <strong></strong>
+                                    </p>
+                                    <span class="text-sm text-gray-500 mt-2">Finalización</span>
+                                </div>
+                            </div>
+
+
+                            <div class='border p-2 bg-gray-100 shadow'>
+                                <div class='flex flex-col items-center justify-center p-2 bg-white shadow h-full'>
+                                    <p id="abandono" class='text-5xl text-[#c7606cff] mt-6'>
+                                        <strong></strong>
+                                    </p>
+                                    <span class="text-sm text-gray-500">Abandono</span>
+                                </div>
+                            </div>
+
+                            <div class='border p-2 bg-gray-100 shadow'>
+                                <div class='flex flex-col items-center justify-center p-2 bg-white h-full shadow'>
+                                    <p id="totalAbandonos" class='text-5xl text-[#c7606cff] mt-6'>
+                                        <strong></strong>
+                                    </p>
+                                    <h1 class=' text-lg mb-4 text-gray-500'>Abandonos</h1>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    
+                        <div class="mt-4 bg-gray-100 border shadow p-2">
+                            <div class='p-2 bg-white shadow'>
+
+                                
+                                <div class="mt-2 space-y-2">
+                                    <p class="text-sm text-gray-500">Asistencias</p>
+
+                                    <div class="w-full bg-gray-100 h-4 rounded-full overflow-hidden shadow-inner">
+                                        <div id="barAsistencias"
+                                            class="h-full bg-[#79A3C9] rounded-full flex items-center justify-end px-2 text-white text-sm font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 mb-2 space-y-2">
+                                    <p class="text-sm text-gray-500">Faltas</p>
+
+                                    <div class="w-full bg-gray-100 h-4 rounded-full overflow-hidden shadow-inner">
+                                        <div id="barFaltas"
+                                            class="h-full bg-[#c7606cff] rounded-full flex items-center justify-end px-2 text-white text-sm font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module">
+        import { fetchCursos } from '/services/fetchDatosCursos.js';
+        import { procesarCursos } from '../utils/transformarDatos.js';
+       
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const params = new URLSearchParams(window.location.search);
+            const idCurso = params.get("id");
+
+            try {
+                const cursosCrudos = await fetchCursos();
+                const cursosProcesados = procesarCursos(cursosCrudos);
+
+                const curso = cursosProcesados.find(c => c.idGrupo === idCurso);
+                if (!curso) {
+                    console.error("Curso no encontrado:", idCurso);
+                    return;
+                }
+
+                document.getElementById("titulo").textContent = `Informe del Grupo: ${idCurso}`;
+
+                const tag = document.getElementById("valoracionTag");
+                if (curso.ValoracionCurso && curso.ValoracionCurso > 0) {
+                    tag.textContent = curso.valoracion; 
+                    if (curso.ValoracionCurso >= 4) tag.classList.add("bg-green-600");
+                    else if (curso.ValoracionCurso >= 3) tag.classList.add("bg-yellow-500");
+                    else tag.classList.add("bg-red-600");
+                }
+
+                document.getElementById("infoCurso").innerHTML = `
+                    <li class="px-2 py-1 border-b border-gray-300">Docente: ${curso.NombreDocente}</li>
+                    <li class="px-2 py-1 border-b border-gray-300">Grupo: ${curso.idGrupo}</li>
+                    <li class="px-2 py-1 border-b border-gray-300">Inicio: ${curso.startDate}</li>
+                    <li class="px-2 py-1">Fin: ${curso.endDate}</li>
+                `;
+
+                document.getElementById("interesados").textContent = curso.Interesados;
+                document.getElementById("iniciados").textContent = curso.TotalAlumnos;
+                document.getElementById("conversion").textContent = curso.Conversion;
+                document.getElementById("graduados").textContent = curso.TotalAlumnosGraduados;
+                document.getElementById("totalAbandonos").textContent = curso.TotalAlumnosAbandono;
+                document.getElementById("barAsistencias").style.width = curso.PorcentajeAsistencias + "%";
+                document.getElementById("barAsistencias").textContent = curso.PorcentajeAsistencias + "%";
+                document.getElementById("barFaltas").style.width = curso.PorcentajeFaltas + "%";
+                document.getElementById("barFaltas").textContent = curso.PorcentajeFaltas + "%";
+                document.getElementById("finalizacion").textContent = curso.TasaFinalizacion + "%";
+                document.getElementById("abandono").textContent = curso.TasaAbandono + "%";
+
+            } catch (err) {
+                console.error("Error cargando curso:", err);
+            }
+        });
+    </script>
+    
+
+
+
+
+</body>
+</html>
